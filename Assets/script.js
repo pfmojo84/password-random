@@ -47,21 +47,17 @@ var generateBtn = document.querySelector("#generate");
     randKey += randomChoice[Math.floor(Math.random() * randomChoice.length)]
 
 //console.log ("incrementing addition of characters", randKey[i])   
-
     }
-    return(randKey)
+    return(randKey);
 
   }
-
-
-function writePassword() {
-    var password = generatePassword();
     var passwordText = document.querySelector("#password");
-  
-    passwordText.value = password;
-  
-  }
-  
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword); 
+    function writePassword (randKey) {
+        if (password.length === 0) {
+            return;
+        }
+          passwordText.value = randKey;
+}  
+  // Add event listener to generate button and call getPassword when button is clicked by user
+  generateBtn.addEventListener("click", function() {writePassword(getPassword())}); 
   
