@@ -10,6 +10,28 @@ var generateBtn = document.querySelector("#generate");
     var randSelect = "";
     var randKey = "";
 
+//Users require a series of prompts to define length of password and acknowledge character criteria for randomized password
+    var passLength = prompt(
+        "Passwords must be between 8 and 128 characters long. Please enter the length of your password."
+    );
+
+//Based on tutor feedback - added console.log to test steps/variables once function is complete
+//console.log("password length", passLength) 
+
+     if (passLength < 8 || passLength > 128 || isNaN(passLength)){
+        alert("Passwords must be between 8 and 128 characters long. Please enter another number within this range.")
+        return; 
+
+       
+//Generate follow up prompts to confirm criteria of randomized password for user. Create additional variab
+    } else {
+      var upperLetter = confirm("Your password will contain a variety of uppercase letters. Click Ok to Continue.");
+      var lowerLetter = confirm("Your password will contain a variety of lowercase letters. Click Ok to Continue.");
+      var numbOptions = confirm("Your password will contain random numbers. Click Ok to Continue.");
+      var symbolOps = confirm("Your password will contain a variety of symbols. Click Ok to Continue.")
+      }
+//console.log("choices", upperLetter, lowerLetter, numbOptions, symbolOps)
+
   }
 
 
