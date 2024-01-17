@@ -7,7 +7,7 @@ var generateBtn = document.querySelector("#generate");
     var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
     var numbers = "0123456789";
     var specialChar = "!@#$%^&*()-=+<>?/|':[]{}";
-    var randSelect = "";
+    var randomChoice = "";
     var randKey = "";
 
 //Users require a series of prompts to define length of password and acknowledge character criteria for randomized password
@@ -30,7 +30,26 @@ var generateBtn = document.querySelector("#generate");
       var numbOptions = confirm("Your password will contain random numbers. Click Ok to Continue.");
       var symbolOps = confirm("Your password will contain a variety of symbols. Click Ok to Continue.")
       }
+
 //console.log("choices", upperLetter, lowerLetter, numbOptions, symbolOps)
+
+    if (upperLetter) {randomChoice += upperCaseLetters;}
+    if (lowerLetter) {randomChoice += lowerCaseLetters;}
+    if (numbOptions) {randomChoice += numbers;}
+    if (symbolOps) {randomChoice += specialChar;}
+
+//console.log ("possible password choices", randomChoice)
+
+//Create 'for' loop to repeat for each character of passLength.
+    for (i = 0; i < passLength; i++) {
+
+//Use methods to create random password for the length defined by the user
+    randKey += randomChoice[Math.floor(Math.random() * randomChoice.length)]
+
+//console.log ("incrementing addition of characters", randKey[i])   
+
+    }
+    return(randKey)
 
   }
 
